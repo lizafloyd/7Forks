@@ -1,5 +1,8 @@
-<h2>Welcome, <%= @user.username %>.</h2>
-
 <%= link_to "Edit my Profile", edit_user_path(@user) %>
-
 <%= link_to "Delete my Account", user_path(@user), method: :delete %>
+<h2>Welcome, <%= @user.username %>.</h2>
+<%= link_to "Add a Fork", new_user_fork_path(@user) %>
+
+<% @forks.each do |fo| %>
+  <p><%= link_to fo.name, user_fork_path(@user, fo) %></p>
+<% end %>

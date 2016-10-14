@@ -4,17 +4,21 @@ def index
 end
 
 def show
+  @user = User.find(params[:user_id])
   @fork = Fork.find(params[:id])
+  @forks = @user.forks.all
 end
 
 def new
+  @user = User.find(params[:user_id])
   @fork = Fork.new
 end
 
 def create
-  @fork = Fork.create(fork_params)
+  @user = User.find(params[:user_id])
+  @fork = @user.forks.create!(fork_params)
 
-  redirect_to fork_path(@fork)
+  redirect_to user_fork_path(@user, @fork)
 end
 
 def edit

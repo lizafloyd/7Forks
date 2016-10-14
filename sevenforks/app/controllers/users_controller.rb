@@ -5,6 +5,7 @@ end
 
 def show
   @user = User.find(params[:id])
+  @forks = @user.forks.all
 end
 
 def new
