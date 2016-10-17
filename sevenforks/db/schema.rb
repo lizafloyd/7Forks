@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014145519) do
+ActiveRecord::Schema.define(version: 20161017163412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,18 @@ ActiveRecord::Schema.define(version: 20161014145519) do
     t.index ["user_id"], name: "index_forks_on_user_id", using: :btree
   end
 
-  create_table "resources", force: :cascade do |t|
+  create_table "tools", force: :cascade do |t|
     t.string   "text"
     t.string   "source_url"
-    t.integer  "fork_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["fork_id"], name: "index_resources_on_fork_id", using: :btree
+    t.string   "topic"
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "topic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,5 +47,4 @@ ActiveRecord::Schema.define(version: 20161014145519) do
   end
 
   add_foreign_key "forks", "users"
-  add_foreign_key "resources", "forks"
 end

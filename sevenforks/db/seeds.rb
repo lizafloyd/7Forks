@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Topic.destroy_all
+Topic.create!(topic: "Work")
+Topic.create!(topic: "School")
+Topic.create!(topic: "Marriage")
+Topic.create!(topic: "Kids")

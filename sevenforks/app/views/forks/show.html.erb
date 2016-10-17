@@ -1,3 +1,10 @@
+<h2><%= link_to @user.username, user_path(@user) %></h2>
+
 <h2><%= @fork.name %></h2>
 
-<p>This is where I will put resources to do with this fork.</p>
+<h3><%= @fork.topic %></h3>
+
+<%= link_to "Add new Tool", new_tool_path %>
+
+
+<%= link_to "Delete this Fork", user_fork_path(@user, @fork), method: :delete %>

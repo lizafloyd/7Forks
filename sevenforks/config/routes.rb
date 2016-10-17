@@ -29,5 +29,5 @@ Rails.application.routes.draw do
    resources :users do
      resources :forks
    end
-   resources :resources
+   resources :tools
 end

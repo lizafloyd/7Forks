@@ -1,10 +1,9 @@
 <h2>Add a New Fork</h2>
 <%= form_for [@user, @fork] do |f| %>
 
-  <%= f.label :topic %>
-  <%= f.text_field :topic %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <%= f.collection_select :topic, Topic.all, :topic, :topic %>
 
 
 

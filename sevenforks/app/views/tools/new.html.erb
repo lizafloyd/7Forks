@@ -1,0 +1,14 @@
+<h2>Add a New Tool</h2>
+<%= form_for [@tool] do |f| %>
+
+  <%= f.label :text %>
+  <%= f.text_field :text %>
+  <%= f.label :source_url %>
+  <%= f.text_field :source_url %>
+  <%= f.collection_select :topic, Topic.all, :topic, :topic %>
+
+
+
+
+  <%= f.submit %>
+<% end %>

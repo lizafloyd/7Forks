@@ -33,10 +33,11 @@ def update
 end
 
 def destroy
-  @fork = Fork.find(params[:id])
+  @user = User.find(params[:user_id])
+  @fork = @user.forks.find(params[:id])
   @fork.destroy
 
-  redirect_to forks_path
+  redirect_to user_path(@user)
 end
 
 # strong params
