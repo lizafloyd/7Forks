@@ -1,2 +1,14 @@
-<h1>Resources#edit</h1>
-<p>Find me in app/views/resources/edit.html.erb</p>
+<h2>Update Tool</h2>
+
+<%= form_for @tool do |f| %>
+
+  <%= f.label :text %>
+  <%= f.text_field :text %>
+  <%= f.label :source_url %>
+  <%= f.text_field :source_url %>
+
+  <%= link_to "Delete", tool_path(@tool), method: :delete %>
+
+
+  <%= f.submit %>
+<% end %>

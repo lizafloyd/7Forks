@@ -43,6 +43,6 @@ end
 # strong params
 private
 def fork_params
-  params.require(:fork).permit(:topic, :name)
+  params.require(:fork).permit(:topic_id, :name)
 end
 end

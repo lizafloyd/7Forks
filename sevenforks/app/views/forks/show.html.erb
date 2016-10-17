@@ -2,7 +2,11 @@
 
 <h2><%= @fork.name %></h2>
 
-<h3><%= @fork.topic %></h3>
+<h3><%= @fork.topic.topic %></h3>
+
+<% @fork.topic.tools.all.each do |tool| %>
+  <%= link_to tool.text, edit_tool_path(tool) %>
+<% end %>
 
 <%= link_to "Add new Tool", new_tool_path %>
 

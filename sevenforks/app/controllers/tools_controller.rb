@@ -16,7 +16,7 @@ end
 def create
   @tool = Tool.create!(tool_params)
 
-  redirect_to tools_path
+  redirect_to tool_path(@tool)
 end
 
 def edit
@@ -32,14 +32,16 @@ end
 
 def destroy
   @tool = Tool.find(params[:id])
+  @topic = @tool.topic
+  @fork = @topic.forks
   @tool.destroy
 
-  redirect_to tools_path
+  redirect_to '/'
 end
 
 # strong params
 private
 def tool_params
-  params.require(:tool).permit(:text, :source_url, :topic)
+  params.require(:tool).permit(:text, :source_url, :topic_id)
 end
 end
