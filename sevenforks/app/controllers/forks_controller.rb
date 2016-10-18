@@ -16,7 +16,7 @@ end
 
 def create
   @user = User.find(params[:user_id])
-  @fork = @user.forks.create!(fork_params)
+  @fork = @user.forks.create!(fork_params.merge(user: current_user))
 
   redirect_to user_fork_path(@user, @fork)
 end
@@ -27,16 +27,22 @@ end
 
 def update
   @fork = Fork.find(params[:id])
-  @fork.update(fork_params)
-
+  if @fork.user == current_user
+    @fork.update(fork_params)
+  else
+    flash[:alert] = "You can only change your own forks."
   redirect_to fork_path(@fork)
+end
 end
 
 def destroy
   @user = User.find(params[:user_id])
   @fork = @user.forks.find(params[:id])
-  @fork.destroy
-
+  if @fork.user == current_user
+    @fork.destroy
+  else
+    flash[:alert] = "You can only change your own forks."
+  end
   redirect_to user_path(@user)
 end
 
