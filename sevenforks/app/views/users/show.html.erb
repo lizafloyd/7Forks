@@ -1,8 +1,11 @@
-<%= link_to "Edit my Profile", edit_user_path(@user) %>
-<%= link_to "Delete my Account", user_path(@user), method: :delete %>
-<h2>Welcome, <%= @user.email %>.</h2>
-<%= link_to "Add a Fork", new_user_fork_path(@user) %>
+<p><%= link_to "Edit my Profile", edit_user_path(@user) %> |
+<%= link_to "Delete my Account", user_path(@user), method: :delete %></p>
 
+<div class="forks">
 <% @forks.each do |fo| %>
-  <p><%= link_to fo.name, user_fork_path(@user, fo) %></p>
+  <div class="fork"><p><%= link_to fo.name, user_fork_path(@user, fo) %></p>
+  <p>(<%= fo.topic.topic %>)</p></div>
 <% end %>
+</div>
+
+<p><%= link_to "Add a Fork", new_user_fork_path(@user) %></p>
