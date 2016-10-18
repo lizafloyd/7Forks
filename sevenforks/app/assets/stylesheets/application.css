@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+.toolC {
+  border-style: solid;
+  border-width: thin;
+}
+body {
+  font-family: 'Abhaya Libre', serif;
+  background-color: #ccffff;
+}
