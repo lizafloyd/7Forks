@@ -2,10 +2,10 @@
 
 <h2><%= @fork.name %></h2>
 
-<div class="toolC"><% @fork.topic.tools.all.each do |tool| %>
-  <p><%= tool.text %></p>
-  <a href="<%= tool.source_url %>">Click here for more info.</a>
+<% @fork.topic.tools.all.each do |tool| %>
+  <div class="toolC"><p><%= tool.text %></p>
+  <a href="<%= tool.source_url %>">Click here for more info.</a></div>
 <% end %>
-</div>
+
 
 <p><%= link_to "Delete this Fork", user_fork_path(@user, @fork), method: :delete %></p>
