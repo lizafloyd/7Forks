@@ -36,9 +36,6 @@ def destroy
   redirect_to users_path
 end
 
-def profile
-
-end
 # strong params
 private
 def user_params
