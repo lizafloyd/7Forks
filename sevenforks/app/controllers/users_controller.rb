@@ -36,6 +36,18 @@ def destroy
   redirect_to users_path
 end
 
+def profile
+
+end
+
+def setup
+  if params[:p].to_i < 5
+    current_user.forks.create!(name:"Prioritizing Wellness", topic_id:Topic.where(topic: 'Personal Illness')[0].id)
+  end
+
+  redirect_to user_path(current_user)
+  # binding.pry
+end
 # strong params
 private
 def user_params

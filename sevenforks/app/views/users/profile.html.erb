@@ -1,2 +1,11 @@
 <h2>Welcome to 7Forks</h2>
 <p>Just a few questions to get your profile set up.</p>
+
+<%= form_tag({controller: "users", action: "setup"}, method: "post") do  %>
+
+  <%= label_tag(:p, "How many hours' sleep do you get in a night?") %>
+  <%= text_field_tag(:p) %>
+
+  
+  <%= submit_tag("Submit") %></%>
+<% end %>
