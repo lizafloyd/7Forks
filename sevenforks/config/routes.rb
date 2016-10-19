@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations"}
+  devise_for :users, :controllers => {registrations: "registrations"}
   # get 'resources/index'
   #
   # get 'resources/show'
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   #
   # get 'users/edit'
 
-  get '/profile', :to => 'users#profile'
+  get '/profile' => 'users#profile', as: :user_root
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
    root to: "users#index"

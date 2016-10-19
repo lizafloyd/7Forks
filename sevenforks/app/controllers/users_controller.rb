@@ -37,7 +37,7 @@ def destroy
 end
 
 def profile
-  redirect_to '/'
+
 end
 # strong params
 private

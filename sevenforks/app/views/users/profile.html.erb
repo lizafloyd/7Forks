@@ -1,9 +1,2 @@
 <h2>Welcome to 7Forks</h2>
 <p>Just a few questions to get your profile set up.</p>
-
-<% form_tag({controller: "user", action: "profile"}, method: "post", class: "profile_form") do |f| %>
-  <%= f.label :sleep %><br>
-  <%= f.field_type :sleep %>
-
-  <%= f.submit %>
-<% end %>
