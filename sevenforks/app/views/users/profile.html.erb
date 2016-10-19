@@ -3,9 +3,29 @@
 
 <%= form_tag({controller: "users", action: "setup"}, method: "post") do  %>
 
-  <%= label_tag(:p, "How many hours' sleep do you get in a night?") %>
-  <%= text_field_tag(:p) %>
+  <p><%= label_tag(:p, "How many hours' sleep do you get in a night?") %>
+  <%= text_field_tag(:p) %></p>
 
-  
+  <p><%= label_tag(:a, "How many times in a week do you exercise for at least 20 minutes?") %>
+  <%= text_field_tag(:a) %></p>
+
+  <p><%= check_box_tag(:b, "parent") %>
+  <%= label_tag(:b_parent, "I am responsible for the wellbeing of children.") %>
+  <br><%= check_box_tag(:b, "adult") %>
+  <%= label_tag(:b_adult, "I am responsible for the wellbeing of a family member with particular needs.") %>
+  <br><%= check_box_tag(:b, "solo") %>
+    <%= label_tag(:b_solo, "I am only responsible for my own wellbeing.") %></p>
+
+  <p><%= label_tag(:w, "How many hours a week do you work, including at home and off the clock?") %>
+  <%= text_field_tag(:w) %></p>
+
+  <p><%= check_box_tag(:h, "hobby") %>
+  <%= label_tag(:h_hobby, "I have a hobby that absorbs at least ten hours a week.") %>
+  <br><%= label_tag(:i, "If yes, please enter hobby name here.") %><br>
+  <%= text_field_tag(:i) %></p>
+
+
+
+
   <%= submit_tag("Submit") %></%>
 <% end %>

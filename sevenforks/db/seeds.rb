@@ -20,6 +20,7 @@ famill = Topic.create!(topic: "Family Illness")
 abuse = Topic.create!(topic: "Abuse")
 loneliness = Topic.create!(topic: "Loneliness")
 esteem = Topic.create!(topic: "Self-Esteem")
+hobby = Topic.create!(topic: "Hobby")
 
 #work
 Tool.create!(text: "Work is only part of a well-lived life.  Remember to prioritize yourself.", source_url: "http://www.forbes.com/sites/jacquelynsmith/2013/04/18/8-ways-to-achieve-better-work-life-balance/#4d86bb6b3a25", topic_id:work.id)
