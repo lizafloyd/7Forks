@@ -8,10 +8,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
   </head>
 
   <body>
     <h1><%= link_to "7Forks", users_path %></h1>
+    <h2 class="tagline">Because you only have so many forks to give</h2>
     <% if !current_user %>
       <p><%= link_to "Sign Up", new_user_registration_path %> |
       <%= link_to "Sign In", new_user_session_path %></p>

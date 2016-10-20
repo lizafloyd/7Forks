@@ -13,14 +13,11 @@
  *= require_tree .
  *= require_self
  */
-.toolC {
-  border-style: solid;
-  border-width: thin;
-}
 body {
   font-family: 'Abhaya Libre', serif;
   background-color: #ccffff;
   text-align: center;
+  font-size: 16px;
 }
 a {
   text-decoration: none;
@@ -31,17 +28,65 @@ h1 {
   font-size: 100px;
   margin-bottom: 0;
 }
+h2 {
+  font-size: 22px;
+}
 .forks {
-  margin: auto;
-  width: 75%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 60%;
+  margin:auto;
 }
 .fork {
+  width:150px;
+  height:125px;
+  margin: 12px;
   font-size: 20px;
+  background-color:rgba(255,255,255,0.6);
   border-style: solid;
-  border-width: thin;
-  width: 150px;
-  margin: 10px;
+  border-color: white;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fork > p {
+  margin:0;
+}
+.welcome {
+  font-family: 'Poiret One', cursive;
+  color: #A0958A;
+  font-size: 26px;
+  width: 600px;
+  margin:100px auto auto auto;
+}
+.tools {
+
+}
+.tool {
+  width: 50%;
+  margin: auto;
+  margin: 12px auto 12px auto;
+  background-color:rgba(255,255,255,0.6);
+  border-style: solid;
+  border-color: white;
+  padding:10px;
+}
+.sidebar {
+  position:absolute;
+  top:200px; bottom:0; right:0;
+  width:30%;
+  font-size:20px;
+}
+.tagline {
+  font-family: 'Satisfy', cursive;
+  color: #4B0082;
+  margin-top:0;
+}
+.notice {
+  color: #4B0082;
+}
+.alert {
+  color: #4B0082;
 }
